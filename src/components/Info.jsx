@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { cardShadow, themeColor, hoverEffect } from '../utils/utils'
 
-export function InfoCard() {
+export function Info() {
   return (
     <InfoCard>
       <Card>
