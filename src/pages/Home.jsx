@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 import { Earnings } from '../components/Earnings'
+import { Info } from '../components/Info'
+import { Projects } from '../components/Projects'
+import { Invoices } from '../components/Invoices'
+import { Recommended } from '../components/Recommended'
 
 export function Home() {
   return (
@@ -8,9 +12,25 @@ export function Home() {
         <SectionA>
           <ColumnA1>
             <Earnings />
+            <Info />
           </ColumnA1>
-
+          <ColumnA2>
+            <TitleText>Your Projects</TitleText>
+            <Projects />
+          </ColumnA2>
         </SectionA>
+        <SectionB>
+          <ColumnB1>
+            <InvoiceContainer>
+              <TitleText>Recent Invoices</TitleText>
+              <Invoices />
+            </InvoiceContainer>
+          </ColumnB1>
+          <ColumnB2>
+          <TitleText>Recommended Projects</TitleText>
+          <Recommended />
+          </ColumnB2>
+        </SectionB>
       </SubContainer>
     </Container>
   )
@@ -29,6 +49,7 @@ const Container = styled.div`
     margin: 1rem 0 0 0;
   }
 `
+
 const SubContainer = styled.div`
   margin: 0.5rem 0;
   height: 80%;
@@ -54,6 +75,7 @@ const SectionA = styled.div`
     height: max-content;
   }
 `
+
 const ColumnA1 = styled.div`
   display: flex;
   gap: 3rem;
@@ -62,6 +84,64 @@ const ColumnA1 = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    width: 100%;
+  }
+`
+
+const ColumnA2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 115%;
+  width: 100%;
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    height: max-content;
+    justify-content: center;
+    align-items: center;
+  }
+`
+
+const TitleText = styled.h3`
+  height: 20%;
+`
+
+const SectionB = styled.div`
+  display: flex;
+  gap: 2rem;
+  height: 26vh;
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    flex-direction: column;
+    height: max-content;
+    width: 100%;
+  }
+`
+
+const ColumnB1 = styled.div`
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+`
+
+const ColumnB2 = styled.div`
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+`
+
+const InvoiceContainer = styled.div`
+  height: 60%;
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
   }
 `
